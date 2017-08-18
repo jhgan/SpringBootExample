@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot and Thymeleaf - Hello World!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	Hello, World! - <span th:text="${currentTime}"></span><br/>
+	
+	<th:block th:text="${mysqlFirstDataAccess}" /><br/>
+	<th:block th:text="${mysqlSecondDataAccess}" /><br/>
+	<th:block th:text="${mysqlThirdDataAccess}" /><br/>
+	<th:block th:text="${mssqlFirstDataAccess}" /><br/>
+</body>
+</html>

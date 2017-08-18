@@ -1,0 +1,29 @@
+datasource:
+  mysql:
+    first:
+      url: jdbc:mysql://61.255.238.197:14521/billing?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: msandbox
+      password: msandbox
+      driver-class-name: com.mysql.jdbc.Driver
+      validationQuery: SELECT 1
+      testOnBorrow: true
+    second:
+      url: jdbc:mysql://61.255.238.203:14522/tprprep_bill?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: tprprepbill
+      password: tprprepbill!@#
+      driver-class-name: com.mysql.jdbc.Driver
+      validationQuery: SELECT 1
+      testOnBorrow: true
+    third:
+      url: jdbc:mysql://61.255.238.197:14520/mem_dangi??useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      username: msandbox
+      password: msandbox
+      driver-class-name: com.mysql.jdbc.Driver
+      validationQuery: SELECT 1
+      testOnBorrow: true
+  mssql:
+    first:
+      url: jdbc:sqlserver://61.255.238.220:1433;DatabaseName=test_engdangi
+      username: engdangi
+      password: dangi!@#123
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
