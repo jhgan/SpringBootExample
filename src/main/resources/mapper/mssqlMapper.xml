@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.dao.mssql.first.FirstMssqlDao">
+<mapper namespace="com.example.dao.mssql.MssqlDao">
 
 	<select id="mssqlFirstDataAccess" resultType="java.util.Map">
 		SELECT	CURRENT_TIMESTAMP AS currentTime, 'MSSQL_FIRST' AS type

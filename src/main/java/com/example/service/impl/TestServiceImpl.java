@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.dao.mssql.first.FirstMssqlDao;
+import com.example.dao.mssql.MssqlDao;
 import com.example.dao.mysql.first.FirstMysqlDao;
 import com.example.dao.mysql.second.SecondMysqlDao;
 import com.example.dao.mysql.third.ThirdMysqlDao;
@@ -25,8 +25,8 @@ public class TestServiceImpl implements TestService {
 	private ThirdMysqlDao thirdMysqlDao;
 	
 	@Autowired
-	private FirstMssqlDao firstMssqlDao;
-
+	private MssqlDao firstMssqlDao;
+	
 	@Override
 	public Map<String, Object> mulitiDataSourceTest() {
 		Map<String, Object> result = new HashMap<String, Object>();

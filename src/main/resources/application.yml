@@ -1,3 +1,24 @@
+########################################################################################################################
+### 공통
+########################################################################################################################
+spring:
+  #profile 설정을 안했을 시 active profile
+  profiles:
+    active: local
+  
+  # HTTP encoding (HttpEncodingProperties)
+  http:
+    encoding:
+      charset: UTF-8 # the encoding of HTTP requests/responses
+      enabled: true # enable http encoding support
+      force: true # force the configured encoding
+
+# embeded tomcat
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
 datasource:
   mysql:
     first:
@@ -22,8 +43,7 @@ datasource:
       validationQuery: SELECT 1
       testOnBorrow: true
   mssql:
-    first:
-      url: jdbc:sqlserver://61.255.238.220:1433;DatabaseName=test_engdangi
-      username: engdangi
-      password: dangi!@#123
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://61.255.238.220:1433;DatabaseName=test_engdangi
+    username: engdangi
+    password: dangi!@#123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

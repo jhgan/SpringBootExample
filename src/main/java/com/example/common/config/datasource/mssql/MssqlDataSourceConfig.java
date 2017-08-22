@@ -1,4 +1,4 @@
-package com.example.common.config.datasource.mssql;
+	package com.example.common.config.datasource.mssql;
 
 import javax.sql.DataSource;
 
@@ -15,25 +15,25 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@MapperScan(value="com.example.dao.mssql.first", sqlSessionFactoryRef="firstMssqlSqlSessionFactory")
+@MapperScan(value="com.example.dao.mssql", sqlSessionFactoryRef="mssqlSqlSessionFactory")
 @EnableTransactionManagement
-public class FirstMssqlDataSourceConfig {
-	@Bean(name="firstMssqlDataSource", destroyMethod="close")
-	@ConfigurationProperties(prefix="datasource.mssql.first")
-	public DataSource firstMssqlDataSource() {
+public class MssqlDataSourceConfig {
+	@Bean(name="mssqlDataSource", destroyMethod="close")
+	@ConfigurationProperties(prefix="datasource.mssql")
+	public DataSource mssqlDataSource() {
 		return DataSourceBuilder.create().build();
 	}
 	
-	@Bean(name="firstMssqlSqlSessionFactory")
-	public SqlSessionFactory firstMssqlSqlSessionFacotry(@Qualifier("firstMssqlDataSource") DataSource firstMssqlDataSource, ApplicationContext applicationContext) throws Exception {
+	@Bean(name="mssqlSqlSessionFactory")
+	public SqlSessionFactory mssqlSqlSessionFacotry(@Qualifier("mssqlDataSource") DataSource mssqlDataSource, ApplicationContext applicationContext) throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(firstMssqlDataSource);
+		sqlSessionFactoryBean.setDataSource(mssqlDataSource);
 		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mapper/*.xml"));
 		return sqlSessionFactoryBean.getObject();
 	}
 	
-	@Bean(name="firstMssqlSqlSessionTemplate")
-	public SqlSessionTemplate firstMssqlSqlSessionTemplate(SqlSessionFactory firstMssqlSqlSessionFactory) throws Exception {
-		return new SqlSessionTemplate(firstMssqlSqlSessionFactory);
+	@Bean(name="mssqlSqlSessionTemplate")
+	public SqlSessionTemplate mssqlSqlSessionTemplate(SqlSessionFactory mssqlSqlSessionFactory) throws Exception {
+		return new SqlSessionTemplate(mssqlSqlSessionFactory);
 	}
 }

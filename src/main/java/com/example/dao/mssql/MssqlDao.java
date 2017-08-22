@@ -1,7 +1,7 @@
-package com.example.dao.mssql.first;
+package com.example.dao.mssql;
 
 import java.util.Map;
 
-public interface FirstMssqlDao {
+public interface MssqlDao {
 	public Map<String, Object> mssqlFirstDataAccess();
 }
